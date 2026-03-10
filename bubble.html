@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bubble Buggy – The Estate's Premium Mobile Wash</title>
+
+    <!-- ═══════════ GOOGLE FONTS ═══════════
+         Syne  → headings / logo / prices
+         Plus Jakarta Sans → body text / buttons
+    ════════════════════════════════════════ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ═══════════ STYLESHEET ═══════════
+         All styles live in bubble.css
+         (keep both files in the same folder)
+    ════════════════════════════════════════ -->
+    <link rel="stylesheet" href="bubble.css" />
+  </head>
+
+  <body>
+    <!-- ═══════════════════════════════════
+         NAV
+         Fixed top bar: logo | links | phone | CTA buttons
+    ════════════════════════════════════════ -->
+    <nav class="nav">
+      <!-- Logo -->
+      <a href="#home" class="logo">
+        <span>Bubble</span><span class="b2">Buggy</span
+        ><span class="dot"></span>
+      </a>
+
+      <!-- Centre navigation links (hidden on mobile) -->
+      <div class="nav-links">
+        <a class="nav-link" href="#why">Why Us</a>
+        <a class="nav-link" href="#services">Packages</a>
+        <a class="nav-link" href="#gallery">Gallery</a>
+      </div>
+
+      <!-- Right side: phone number + action buttons -->
+      <div class="nav-right">
+        <span class="nav-phone"
+          ><a href="tel:+27000000000">+27 000 000 0000</a></span
+        >
+
+        <!-- Book Now button (opens Fresha) -->
+        <a
+          class="btn btn-book"
+          href="https://www.fresha.com/for-business"
+          target="_blank"
+          rel="noopener"
+        >
+          <svg
+            width="13"
+            height="13"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <rect x="3" y="4" width="18" height="18" rx="2" />
+            <line x1="16" y1="2" x2="16" y2="6" />
+            <line x1="8" y1="2" x2="8" y2="6" />
+            <line x1="3" y1="10" x2="21" y2="10" />
+          </svg>
+          Book Now
+        </a>
+
+        <!-- WhatsApp button -->
+        <a
+          class="btn btn-wa"
+          href="https://wa.me/27000000000?text=Hi%20Bubble%20Buggy!%20I%27d%20like%20to%20book%20a%20wash."
+          target="_blank"
+          rel="noopener"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+            />
+            <path
+              d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.118 1.532 5.845L.054 23.25a.75.75 0 0 0 .916.916l5.405-1.478A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.745 9.745 0 0 1-5.003-1.375l-.358-.213-3.716 1.015 1.015-3.716-.213-.358A9.745 9.745 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"
+            />
+          </svg>
+          WhatsApp
+        </a>
+      </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════
+         HERO SECTION
+         Full-screen opening with background image, headline, stats
+         ✏️ Edit estates, headline, sub text, and stats here
+    ════════════════════════════════════════ -->
+    <section class="hero" id="home">
+      <!-- Background image (set via CSS in .hero-bg) -->
+      <div class="hero-bg"></div>
+
+      <div class="hero-inner">
+        <!-- ✏️ Edit estate names here -->
+        <div class="estate-tag">
+          📍 Estates we serve &nbsp;<span class="sep">|</span>&nbsp;
+          <span class="estates"> Sitari Country Estate &nbsp; </span>
+        </div>
+
+        <!-- Eyebrow label above headline -->
+        <p class="hero-eyebrow">Mobile Car Wash</p>
+
+        <!-- Main headline — <em> gets gradient colour treatment -->
+        <h1>Everyone's preferred<br /><em>car wash.</em></h1>
+
+        <!-- Subtitle paragraph -->
+        <p class="hero-sub">
+          Your neighbours will notice. Your car already has. We come to you no
+          queues, no driving, just a clean car waiting for you outside.
+        </p>
+
+        <!-- CTA Buttons row -->
+        <div class="hero-ctas">
+          <!-- Book Now column (button + Fresha note) -->
+          <div class="cta-col">
+            <a
+              class="btn btn-book lg"
+              href="https://www.fresha.com/for-business"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <rect x="3" y="4" width="18" height="18" rx="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg>
+              Book Now
+            </a>
+            <span class="fresha-note">Instant booking via <b>Fresha</b></span>
+          </div>
+
+          <!-- WhatsApp button -->
+          <a
+            class="btn btn-wa lg"
+            href="https://wa.me/27000000000?text=Hi%20Bubble%20Buggy!%20I%27d%20like%20to%20book%20a%20wash."
+            target="_blank"
+            rel="noopener"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+              />
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.118 1.532 5.845L.054 23.25a.75.75 0 0 0 .916.916l5.405-1.478A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.745 9.745 0 0 1-5.003-1.375l-.358-.213-3.716 1.015 1.015-3.716-.213-.358A9.745 9.745 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"
+              />
+            </svg>
+            Book via WhatsApp
+          </a>
+
+          <!-- View Packages scroll link -->
+          <a class="btn btn-outline lg" href="#services">View Packages</a>
+        </div>
+
+        <!-- ✏️ Edit stats here: cars washed / estates / guarantee -->
+        <div class="hero-stats">
+          <div>
+            <div class="stat-val">100<span>+</span></div>
+            <div class="stat-lbl">Cars washed</div>
+          </div>
+          <div>
+            <div class="stat-val">1<span> estates</span></div>
+            <div class="stat-lbl">Currently serving</div>
+          </div>
+          <div>
+            <div class="stat-val">100<span>%</span></div>
+            <div class="stat-lbl">Rewash guarantee</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Decorative divider line -->
+    <div class="rule"></div>
+
+    <!-- ═══════════════════════════════════
+         WHY CHOOSE US SECTION
+         Three feature cards with emoji icons
+         ✏️ Edit card titles/descriptions directly below
+    ════════════════════════════════════════ -->
+    <section class="why" id="why">
+      <!-- Section header -->
+      <div class="sec-head fi">
+        <div class="lbl">Why Bubble Buggy</div>
+        <h2 class="sec-title">
+          Fast, reliable &amp; always ready<br />to make your ride flawless
+        </h2>
+      </div>
+
+      <!-- Feature cards grid -->
+      <div class="feats">
+        <!-- Card 1: Convenience -->
+        <div class="feat fi">
+          <div class="feat-ico">📍</div>
+          <div class="feat-title">Pure Convenience</div>
+          <p class="feat-desc">
+            We come to you. From your driveway to your parking bay, we bring the
+            wash right to your doorstep no detours, no queues
+          </p>
+        </div>
+
+        <!-- Card 2: Quality -->
+        <div class="feat fi">
+          <div class="feat-ico">✨</div>
+          <div class="feat-title">Fast &amp; Flawless</div>
+          <p class="feat-desc">
+            Premium soaps and professional equipment deliver a pro-level clean
+            without the wait. In and out, every single time.
+          </p>
+        </div>
+
+        <!-- Card 3: Guarantee -->
+        <div class="feat fi">
+          <div class="feat-ico">🔄</div>
+          <div class="feat-title">Rewash Guarantee</div>
+          <p class="feat-desc">
+            Not happy before we leave? Tell us we'll make it right on the spot,
+            no questions asked. That's the Bubble Buggy promise
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Decorative divider line -->
+    <div class="rule"></div>
+
+    <!-- ═══════════════════════════════════
+         PACKAGES / PRICING SECTION
+         Cards are rendered dynamically from the PACKAGES array in the script.
+         ✏️ Edit packages inside the <script> block at the bottom of this file.
+    ════════════════════════════════════════ -->
+    <section class="services" id="services">
+      <!-- Section header -->
+      <div class="sec-head fi">
+        <div class="lbl">Our Packages</div>
+        <h2 class="sec-title">Packages built for every ride.</h2>
+        <p class="sec-sub">
+          All packages include our rewash guarantee — because anything less than
+          flawless isn't good enough.
+        </p>
+      </div>
+
+      <!-- Package cards injected here by JavaScript -->
+      <div class="pkgs" id="pkgsGrid"></div>
+
+      <!-- ── BUNDLE DEALS ── -->
+      <div class="bundle-wrap fi">
+        <!-- "Buy a bundle and save" banner tag -->
+        <div class="bundle-header">
+          <div class="bundle-tag-pill">
+            <span class="bundle-tag-icon">🎁</span>
+            <span>Buy a bundle &amp; save</span>
+          </div>
+          <div class="bundle-header-line"></div>
+          <p class="bundle-sub">Pre-purchase 3 credits and save <strong>R50</strong> — use them anytime, any wash.</p>
+        </div>
+
+        <!-- Deal cards grid -->
+        <div class="bundles">
+
+          <!-- Bundle 1: The Bubble × 3 -->
+          <div class="bundle-card fi">
+            <div class="bundle-save-badge">Save R50</div>
+            <div class="bundle-wash-name">The Bubble</div>
+            <div class="bundle-wash-tag">Sedans, hatchbacks &amp; compact SUVs</div>
+            <div class="bundle-pricing">
+              <div class="bundle-credits">
+                <span class="bundle-credits-num">3</span>
+                <span class="bundle-credits-lbl">credits</span>
+              </div>
+              <div class="bundle-prices">
+                <div class="bundle-was">was <s>R480</s></div>
+                <div class="bundle-now">R430</div>
+                <div class="bundle-per">R143 per wash</div>
+              </div>
+            </div>
+            <div class="bundle-bar"></div>
+            <ul class="bundle-perks">
+              <li>3 × full exterior wash</li>
+              <li>Use credits at any time</li>
+              <li>Rewash guarantee on every visit</li>
+            </ul>
+            <a class="btn btn-bundle" href="https://wa.me/27000000000?text=Hi%20Bubble%20Buggy!%20I%27d%20like%20to%20buy%20The%20Bubble%20bundle%20(3%20credits)." target="_blank" rel="noopener">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.118 1.532 5.845L.054 23.25a.75.75 0 0 0 .916.916l5.405-1.478A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.745 9.745 0 0 1-5.003-1.375l-.358-.213-3.716 1.015 1.015-3.716-.213-.358A9.745 9.745 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+              Grab this bundle
+            </a>
+          </div>
+
+          <!-- Bundle 2: The Full Buggy × 3 -->
+          <div class="bundle-card bundle-card--featured fi">
+            <div class="bundle-save-badge">Save R50</div>
+            <div class="bundle-wash-name">The Full Buggy</div>
+            <div class="bundle-wash-tag">SUVs, vans, bakkies &amp; 4x4s</div>
+            <div class="bundle-pricing">
+              <div class="bundle-credits">
+                <span class="bundle-credits-num">3</span>
+                <span class="bundle-credits-lbl">credits</span>
+              </div>
+              <div class="bundle-prices">
+                <div class="bundle-was">was <s>R540</s></div>
+                <div class="bundle-now">R490</div>
+                <div class="bundle-per">R163 per wash</div>
+              </div>
+            </div>
+            <div class="bundle-bar"></div>
+            <ul class="bundle-perks">
+              <li>3 × full exterior wash</li>
+              <li>Use credits at any time</li>
+              <li>Rewash guarantee on every visit</li>
+            </ul>
+            <a class="btn btn-bundle btn-bundle--aqua" href="https://wa.me/27000000000?text=Hi%20Bubble%20Buggy!%20I%27d%20like%20to%20buy%20The%20Full%20Buggy%20bundle%20(3%20credits)." target="_blank" rel="noopener">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.118 1.532 5.845L.054 23.25a.75.75 0 0 0 .916.916l5.405-1.478A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.745 9.745 0 0 1-5.003-1.375l-.358-.213-3.716 1.015 1.015-3.716-.213-.358A9.745 9.745 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+              Grab this bundle
+            </a>
+          </div>
+
+        </div><!-- /bundles -->
+      </div><!-- /bundle-wrap -->
+
+    </section>
+
+    <!-- Decorative divider line -->
+    <div class="rule"></div>
+
+    <!-- ═══════════════════════════════════
+         GALLERY SECTION
+         Photo grid rendered dynamically from GALLERY_IMAGES array in script.
+         ✏️ Replace src URLs in GALLERY_IMAGES inside the <script> block below.
+    ════════════════════════════════════════ -->
+    <section class="gallery" id="gallery">
+      <!-- Section header -->
+      <div class="sec-head fi">
+        <div class="lbl">Before &amp; After</div>
+        <h2 class="sec-title">Real results, real cars.</h2>
+        <p class="sec-sub">
+          See the Bubble Buggy difference. Replace the tiles below with your own
+          before-and-after photos.
+        </p>
+      </div>
+
+      <!-- Tip notice about adding photos -->
+      <div class="gallery-tip">
+        <svg
+          width="12"
+          height="12"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <circle cx="12" cy="12" r="10" />
+          <line x1="12" y1="8" x2="12" y2="12" />
+          <line x1="12" y1="16" x2="12.01" y2="16" />
+        </svg>
+        To add your photos, replace the <code>src</code> URLs in
+        <code>GALLERY_IMAGES</code> inside the script.
+      </div>
+
+      <!-- Gallery photo cells injected here by JavaScript -->
+      <div class="g-grid" id="galGrid"></div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         FOOTER
+         Three-column: brand info | contact | quick links
+         ✏️ Edit phone number and links here
+    ════════════════════════════════════════ -->
+    <footer class="footer">
+      <div class="footer-grid">
+        <!-- Column 1: Logo + tagline -->
+        <div>
+          <div class="footer-logo">
+            Bubble<span class="b2">Buggy</span
+            ><span
+              style="
+                display: inline-block;
+                width: 6px;
+                height: 6px;
+                background: var(--aqua);
+                border-radius: 50%;
+                margin: 0 2px 3px;
+                box-shadow: 0 0 7px var(--aqua);
+              "
+            ></span>
+          </div>
+          <p class="footer-tagline">
+            The estate's most trusted mobile car wash. We come to you, every
+            time, with the care your car deserves.
+          </p>
+        </div>
+
+        <!-- Column 2: Contact phone -->
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a class="footer-phone" href="tel:+27000000000">+27 000 000 0000</a>
+        </div>
+
+        <!-- Column 3: Quick navigation links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="#why">Why Bubble Buggy</a>
+            <a href="#services">Packages</a>
+            <a href="#gallery">Gallery</a>
+            <a
+              href="https://www.fresha.com/for-business"
+              target="_blank"
+              rel="noopener"
+              >Book on Fresha ↗</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer bottom bar: copyright notices -->
+      <div class="footer-bottom">
+        <span class="footer-copy"
+          >© 2025 Bubble Buggy. All rights reserved.</span
+        >
+        <span class="footer-copy">Built for the estate. 🫧</span>
+      </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════
+         MOBILE FLOATING ACTION BAR
+         Fixed bottom bar shown only on screens ≤ 820px wide
+         Contains Book Now + WhatsApp buttons
+    ════════════════════════════════════════ -->
+    <div class="mob-bar">
+      <!-- Book Now button -->
+      <a
+        class="btn btn-book"
+        href="https://www.fresha.com/for-business"
+        target="_blank"
+        rel="noopener"
+      >
+        <svg
+          width="13"
+          height="13"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+        >
+          <rect x="3" y="4" width="18" height="18" rx="2" />
+          <line x1="16" y1="2" x2="16" y2="6" />
+          <line x1="8" y1="2" x2="8" y2="6" />
+          <line x1="3" y1="10" x2="21" y2="10" />
+        </svg>
+        Book Now
+      </a>
+
+      <!-- WhatsApp button -->
+      <a
+        class="btn btn-wa"
+        href="https://wa.me/27000000000?text=Hi%20Bubble%20Buggy!%20I%27d%20like%20to%20book%20a%20wash."
+        target="_blank"
+        rel="noopener"
+      >
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+          />
+          <path
+            d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.118 1.532 5.845L.054 23.25a.75.75 0 0 0 .916.916l5.405-1.478A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.745 9.745 0 0 1-5.003-1.375l-.358-.213-3.716 1.015 1.015-3.716-.213-.358A9.745 9.745 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"
+          />
+        </svg>
+        WhatsApp
+      </a>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+         JAVASCRIPT — Edit your data here
+         ✏️ WA        → Your WhatsApp number (digits only)
+         ✏️ FRESHA    → Your Fresha booking URL
+         ✏️ PACKAGES  → Add/edit pricing packages
+         ✏️ GALLERY_IMAGES → Replace src URLs with your photos
+    ════════════════════════════════════════════════════════ -->
+    <script>
+      /* ─────────────────────────────────────────
+         ✏️ GLOBAL SETTINGS — edit these two lines
+      ───────────────────────────────────────── */
+      const WA = "27000000000"; // Your WhatsApp number (no + or spaces)
+      const FRESHA = "https://www.fresha.com/for-business"; // Your Fresha booking URL
+
+      /* ─────────────────────────────────────────
+         ✏️ PACKAGES — add objects to add more packages
+         Fields: name, tag, price, note, featured (bool), badge (optional), features (array)
+      ───────────────────────────────────────── */
+      const PACKAGES = [
+        {
+          name: "The Bubble",
+          tag: "Sedans, hatchbacks & compact SUVs",
+          price: "R160",
+          note: "per wash",
+          featured: false,
+          features: [
+            "Full exterior wash",
+            "Wheel & rim clean",
+            "Windows",
+            "Rewash guaranteed",
+          ],
+        },
+        {
+          name: "The Full Buggy",
+          tag: "SUVs, vans, bakkies & 4x4s",
+          price: "R180",
+          note: "per wash",
+          featured: true, // Adds highlighted border + gradient background
+          badge: "Most Popular", // Shown as pill badge at top of card
+          features: [
+            "Full exterior wash",
+            "Wheel & rim clean",
+            "Windows",
+            "Rewash guaranteed",
+          ],
+        },
+      ];
+
+      /* ─────────────────────────────────────────
+         ✏️ GALLERY — replace src with your own photo URLs
+            Set an item to null to render a placeholder tile instead
+      ───────────────────────────────────────── */
+      const GALLERY_IMAGES = [
+        {
+          src: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600&q=80&auto=format&fit=crop",
+          label: "Before & After",
+        },
+        {
+          src: "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?w=600&q=80&auto=format&fit=crop",
+          label: "Exterior Detail",
+        },
+        {
+          src: "https://images.unsplash.com/photo-1611651338412-8403fa6e3599?w=600&q=80&auto=format&fit=crop",
+          label: "Wheel Clean",
+        },
+        {
+          src: "https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=600&q=80&auto=format&fit=crop",
+          label: "Showroom Finish",
+        },
+        {
+          src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop",
+          label: "Interior Detail",
+        },
+        null, // ← This renders as a dashed "Your photo goes here" placeholder
+      ];
+
+      /* ══════════════════════════════════════════════
+         RENDER LOGIC — no edits needed below this line
+      ══════════════════════════════════════════════ */
+
+      // SVG icon strings reused in package cards
+      const WA_SVG = `<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.118 1.532 5.845L.054 23.25a.75.75 0 0 0 .916.916l5.405-1.478A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.745 9.745 0 0 1-5.003-1.375l-.358-.213-3.716 1.015 1.015-3.716-.213-.358A9.745 9.745 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>`;
+      const CAL_SVG = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`;
+
+      // Render package cards into #pkgsGrid
+      const pkgsGrid = document.getElementById("pkgsGrid");
+      PACKAGES.forEach((p) => {
+        const msg = encodeURIComponent(
+          `Hi Bubble Buggy! I\u2019d like to book \u201c${p.name}\u201d. What\u2019s your next available slot?`,
+        );
+        const badge = p.badge ? `<div class="pkg-badge">${p.badge}</div>` : "";
+        const items = p.features.map((f) => `<li>${f}</li>`).join("");
+        pkgsGrid.insertAdjacentHTML(
+          "beforeend",
+          `<div class="pkg${p.featured ? " featured" : ""} fi">
+        ${badge}
+        <div class="pkg-name">${p.name}</div>
+        <div class="pkg-tag">${p.tag}</div>
+        <div class="pkg-price">${p.price}</div>
+        <div class="pkg-note">${p.note}</div>
+        <div class="pkg-bar"></div>
+        <ul class="pkg-feats">${items}</ul>
+      </div>`,
+        );
+      });
+
+      // Render gallery tiles into #galGrid
+      const galGrid = document.getElementById("galGrid");
+      GALLERY_IMAGES.forEach((item) => {
+        if (!item) {
+          // Null entry → placeholder dashed tile
+          galGrid.insertAdjacentHTML(
+            "beforeend",
+            `<div class="g-empty">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(0,212,184,.45)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Your photo<br/>goes here</span>
+        </div>`,
+          );
+        } else {
+          // Real image tile with hover overlay and label
+          galGrid.insertAdjacentHTML(
+            "beforeend",
+            `<div class="g-cell">
+          <img src="${item.src}" alt="${item.label}" loading="lazy"/>
+          <div class="g-overlay"><span class="g-lbl">${item.label}</span></div>
+        </div>`,
+          );
+        }
+      });
+
+      // Scroll fade-in: watches .fi elements and adds .vis when in viewport
+      const io = new IntersectionObserver(
+        (es) => {
+          es.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("vis");
+              io.unobserve(e.target); // Only animate once
+            }
+          });
+        },
+        { threshold: 0.08 },
+      );
+      document.querySelectorAll(".fi").forEach((el, i) => {
+        el.style.transitionDelay = `${(i % 5) * 0.08}s`; // Staggered delay
+        io.observe(el);
+      });
+    </script>
+  </body>
+</html>
