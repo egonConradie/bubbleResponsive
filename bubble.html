@@ -181,7 +181,7 @@
           </div>
           <div>
             <div class="stat-val">100<span>%</span></div>
-            <div class="stat-lbl">Rewash guarantee</div>
+            <div class="stat-lbl">Eco Friendy</div>
           </div>
         </div>
       </div>
@@ -229,10 +229,10 @@
         <!-- Card 3: Guarantee -->
         <div class="feat fi">
           <div class="feat-ico">🔄</div>
-          <div class="feat-title">Rewash Guarantee</div>
+          <div class="feat-title">Eco Friendy</div>
           <p class="feat-desc">
-            Not happy before we leave? Tell us we'll make it right on the spot,
-            no questions asked. That's the Bubble Buggy promise
+            We use eco friendly, safe cleaning products because we care about
+            your home, your family, and the environment
           </p>
         </div>
       </div>
@@ -243,8 +243,14 @@
 
     <!-- ═══════════════════════════════════
          PACKAGES / PRICING SECTION
-         Cards are rendered dynamically from the PACKAGES array in the script.
-         ✏️ Edit packages inside the <script> block at the bottom of this file.
+         ─────────────────────────────────
+         TOGGLE: Users switch between Packages and Bundles views
+         via the pill toggle. Content updates without page reload.
+         
+         ADD-ONS: Two optional extras (checkboxes) shown below
+         the toggle content, always visible regardless of view.
+         
+         ✏️ Edit packages inside the <script> block at the bottom.
     ════════════════════════════════════════ -->
     <section class="services" id="services">
       <!-- Section header -->
@@ -257,83 +263,245 @@
         </p>
       </div>
 
-      <!-- Package cards injected here by JavaScript -->
-      <div class="pkgs" id="pkgsGrid"></div>
+      <!-- ── TOGGLE SWITCH ──
+           Switches between the Packages view and the Bundles view.
+           JS below reads [data-view] on each button and shows/hides
+           #pkgsView / #bundlesView accordingly.
+      ─────────────────────────────────────────────────────── -->
+      <div class="pkg-toggle-wrap fi">
+        <div
+          class="pkg-toggle"
+          role="tablist"
+          aria-label="Switch between packages and bundles"
+        >
+          <!-- "Packages" tab: active by default -->
+          <button
+            class="toggle-btn active"
+            data-view="packages"
+            role="tab"
+            aria-selected="true"
+            aria-controls="pkgsView"
+          >
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+            >
+              <path
+                d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"
+              />
+              <rect x="9" y="11" width="14" height="10" rx="2" />
+            </svg>
+            Packages
+          </button>
+          <!-- "Bundles" tab -->
+          <button
+            class="toggle-btn"
+            data-view="bundles"
+            role="tab"
+            aria-selected="false"
+            aria-controls="bundlesView"
+          >
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+            >
+              <path d="M20 12V22H4V12" />
+              <path d="M22 7H2v5h20V7z" />
+              <path d="M12 22V7" />
+              <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z" />
+              <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" />
+            </svg>
+            Bundles
+          </button>
+        </div>
+      </div>
+      <!-- /toggle-wrap -->
 
-      <!-- ── BUNDLE DEALS ── -->
-      <div class="bundle-wrap fi">
-        <!-- "Buy a bundle and save" banner tag -->
-        <div class="bundle-header">
-          <div class="bundle-tag-pill">
-            <span class="bundle-tag-icon">🎁</span>
-            <span>Buy a bundle &amp; save</span>
+      <!-- ── PACKAGES VIEW ──
+           Shown when "Packages" toggle is active.
+           Cards injected dynamically by JavaScript from PACKAGES array.
+      ─────────────────────────────────────────────────────── -->
+      <div id="pkgsView" role="tabpanel" aria-labelledby="tab-packages">
+        <!-- Package cards injected here by JavaScript -->
+        <div class="pkgs" id="pkgsGrid"></div>
+      </div>
+
+      <!-- ── BUNDLES VIEW ──
+           Hidden by default. Shown when "Bundles" toggle is active.
+           JS adds .vis to .fi elements inside when first revealed.
+      ─────────────────────────────────────────────────────── -->
+      <div
+        id="bundlesView"
+        style="display: none"
+        role="tabpanel"
+        aria-labelledby="tab-bundles"
+      >
+        <div class="bundle-wrap">
+          <!-- "Buy a bundle and save" banner tag -->
+          <div class="bundle-header fi">
+            <div class="bundle-tag-pill">
+              <span class="bundle-tag-icon">🎁</span>
+              <span>Buy a bundle &amp; save</span>
+            </div>
+            <div class="bundle-header-line"></div>
+            <p class="bundle-sub">
+              Pre-purchase 3 washes and save <strong>R50</strong> — use them
+              anytime, any wash.
+            </p>
           </div>
-          <div class="bundle-header-line"></div>
-          <p class="bundle-sub">Pre-purchase 3 credits and save <strong>R50</strong> — use them anytime, any wash.</p>
+
+          <!-- Deal cards grid -->
+          <div class="bundles">
+            <!-- Bundle 1: The Bubble Club × 3 -->
+            <div class="bundle-card fi">
+              <div class="bundle-save-badge">Save R50</div>
+              <div class="bundle-wash-name">The Bubble Club</div>
+              <div class="bundle-wash-tag">
+                Sedans, hatchbacks &amp; compact SUVs
+              </div>
+              <div class="bundle-pricing">
+                <div class="bundle-credits">
+                  <span class="bundle-credits-num">3</span>
+                  <span class="bundle-credits-lbl">washes</span>
+                </div>
+                <div class="bundle-prices">
+                  <div class="bundle-was">was <s>R525</s></div>
+                  <div class="bundle-now">R475</div>
+                  <div class="bundle-per">R158 per wash</div>
+                </div>
+              </div>
+              <div class="bundle-bar"></div>
+              <ul class="bundle-perks">
+                <li>3 × full exterior wash</li>
+                <li>Use credits at any time</li>
+                <li>Client Satisfaction Guaranteed on Every Visit</li>
+              </ul>
+              <a
+                class="btn btn-bundle"
+                href="https://wa.me/27000000000?text=Hi%20Bubble%20Buggy!%20I%27d%20like%20to%20buy%20The%20Bubble%20Club%20bundle%20(3%20washes)."
+                target="_blank"
+                rel="noopener"
+              >
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+                  />
+                  <path
+                    d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.118 1.532 5.845L.054 23.25a.75.75 0 0 0 .916.916l5.405-1.478A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.745 9.745 0 0 1-5.003-1.375l-.358-.213-3.716 1.015 1.015-3.716-.213-.358A9.745 9.745 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"
+                  />
+                </svg>
+                Grab this bundle
+              </a>
+            </div>
+
+            <!-- Bundle 2: The Buggy Club × 3 -->
+            <div class="bundle-card bundle-card--featured fi">
+              <div class="bundle-save-badge">Save R50</div>
+              <div class="bundle-wash-name">The Buggy Club</div>
+              <div class="bundle-wash-tag">SUVs, vans, bakkies &amp; 4x4s</div>
+              <div class="bundle-pricing">
+                <div class="bundle-credits">
+                  <span class="bundle-credits-num">3</span>
+                  <span class="bundle-credits-lbl">washes</span>
+                </div>
+                <div class="bundle-prices">
+                  <div class="bundle-was">was <s>R600</s></div>
+                  <div class="bundle-now">R550</div>
+                  <div class="bundle-per">R183 per wash</div>
+                </div>
+              </div>
+              <div class="bundle-bar"></div>
+              <ul class="bundle-perks">
+                <li>3 × full exterior wash</li>
+                <li>Use credits at any time</li>
+                <li>Client Satisfaction Guaranteed on Every Visit</li>
+              </ul>
+              <a
+                class="btn btn-bundle btn-bundle--aqua"
+                href="https://wa.me/27000000000?text=Hi%20Bubble%20Buggy!%20I%27d%20like%20to%20buy%20The%20Buggy%20Club%20bundle%20(3%20washes)."
+                target="_blank"
+                rel="noopener"
+              >
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+                  />
+                  <path
+                    d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.118 1.532 5.845L.054 23.25a.75.75 0 0 0 .916.916l5.405-1.478A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.745 9.745 0 0 1-5.003-1.375l-.358-.213-3.716 1.015 1.015-3.716-.213-.358A9.745 9.745 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"
+                  />
+                </svg>
+                Grab this bundle
+              </a>
+            </div>
+          </div>
+          <!-- /bundles -->
+        </div>
+        <!-- /bundle-wrap -->
+      </div>
+      <!-- /bundlesView -->
+
+      <!-- ── EXTRA ADD-ONS ──
+           Always visible below the toggle views (both Packages & Bundles).
+           Users select optional add-ons via checkbox cards.
+           Checked state is purely visual / UX — add to booking message if needed.
+      ─────────────────────────────────────────────────────── -->
+      <div class="addons-section fi">
+        <div class="addons-header">
+          <div class="lbl">Extra Add-Ons</div>
+          <p class="addons-sub">
+            Enhance your wash with premium extras — just tick what you'd like
+            added.
+          </p>
         </div>
 
-        <!-- Deal cards grid -->
-        <div class="bundles">
-
-          <!-- Bundle 1: The Bubble × 3 -->
-          <div class="bundle-card fi">
-            <div class="bundle-save-badge">Save R50</div>
-            <div class="bundle-wash-name">The Bubble</div>
-            <div class="bundle-wash-tag">Sedans, hatchbacks &amp; compact SUVs</div>
-            <div class="bundle-pricing">
-              <div class="bundle-credits">
-                <span class="bundle-credits-num">3</span>
-                <span class="bundle-credits-lbl">credits</span>
-              </div>
-              <div class="bundle-prices">
-                <div class="bundle-was">was <s>R480</s></div>
-                <div class="bundle-now">R430</div>
-                <div class="bundle-per">R143 per wash</div>
+        <div class="addons-grid">
+          <!-- Add-On 1: Tire polish & waxing -->
+          <div class="addon-item">
+            <div class="addon-card">
+              <div class="addon-icon-wrap">🛞</div>
+              <div class="addon-info">
+                <div class="addon-name">Tire polish &amp; waxing</div>
+                <div class="addon-desc">
+                  Deep shine and UV protection on all four tyres
+                </div>
               </div>
             </div>
-            <div class="bundle-bar"></div>
-            <ul class="bundle-perks">
-              <li>3 × full exterior wash</li>
-              <li>Use credits at any time</li>
-              <li>Rewash guarantee on every visit</li>
-            </ul>
-            <a class="btn btn-bundle" href="https://wa.me/27000000000?text=Hi%20Bubble%20Buggy!%20I%27d%20like%20to%20buy%20The%20Bubble%20bundle%20(3%20credits)." target="_blank" rel="noopener">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.118 1.532 5.845L.054 23.25a.75.75 0 0 0 .916.916l5.405-1.478A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.745 9.745 0 0 1-5.003-1.375l-.358-.213-3.716 1.015 1.015-3.716-.213-.358A9.745 9.745 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
-              Grab this bundle
-            </a>
           </div>
 
-          <!-- Bundle 2: The Full Buggy × 3 -->
-          <div class="bundle-card bundle-card--featured fi">
-            <div class="bundle-save-badge">Save R50</div>
-            <div class="bundle-wash-name">The Full Buggy</div>
-            <div class="bundle-wash-tag">SUVs, vans, bakkies &amp; 4x4s</div>
-            <div class="bundle-pricing">
-              <div class="bundle-credits">
-                <span class="bundle-credits-num">3</span>
-                <span class="bundle-credits-lbl">credits</span>
-              </div>
-              <div class="bundle-prices">
-                <div class="bundle-was">was <s>R540</s></div>
-                <div class="bundle-now">R490</div>
-                <div class="bundle-per">R163 per wash</div>
+          <!-- Add-On 2: Windscreen rain repellent -->
+          <div class="addon-item">
+            <div class="addon-card">
+              <div class="addon-icon-wrap">💧</div>
+              <div class="addon-info">
+                <div class="addon-name">Windscreen rain repellent</div>
+                <div class="addon-desc">
+                  Water-repellent coating for crystal clear visibility
+                </div>
               </div>
             </div>
-            <div class="bundle-bar"></div>
-            <ul class="bundle-perks">
-              <li>3 × full exterior wash</li>
-              <li>Use credits at any time</li>
-              <li>Rewash guarantee on every visit</li>
-            </ul>
-            <a class="btn btn-bundle btn-bundle--aqua" href="https://wa.me/27000000000?text=Hi%20Bubble%20Buggy!%20I%27d%20like%20to%20buy%20The%20Full%20Buggy%20bundle%20(3%20credits)." target="_blank" rel="noopener">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.118 1.532 5.845L.054 23.25a.75.75 0 0 0 .916.916l5.405-1.478A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.745 9.745 0 0 1-5.003-1.375l-.358-.213-3.716 1.015 1.015-3.716-.213-.358A9.745 9.745 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
-              Grab this bundle
-            </a>
           </div>
-
-        </div><!-- /bundles -->
-      </div><!-- /bundle-wrap -->
-
+        </div>
+        <!-- /addons-grid -->
+      </div>
+      <!-- /addons-section -->
     </section>
 
     <!-- Decorative divider line -->
@@ -501,14 +669,14 @@
       const FRESHA = "https://www.fresha.com/for-business"; // Your Fresha booking URL
 
       /* ─────────────────────────────────────────
-         ✏️ PACKAGES — add objects to add more packages
+         ✏️ PACKAGES — Updated prices: The Bubble R175, The Full Buggy R200
          Fields: name, tag, price, note, featured (bool), badge (optional), features (array)
       ───────────────────────────────────────── */
       const PACKAGES = [
         {
           name: "The Bubble",
           tag: "Sedans, hatchbacks & compact SUVs",
-          price: "R160",
+          price: "R175", // ← Updated from R160
           note: "per wash",
           featured: false,
           features: [
@@ -521,7 +689,7 @@
         {
           name: "The Full Buggy",
           tag: "SUVs, vans, bakkies & 4x4s",
-          price: "R180",
+          price: "R200", // ← Updated from R180
           note: "per wash",
           featured: true, // Adds highlighted border + gradient background
           badge: "Most Popular", // Shown as pill badge at top of card
@@ -535,31 +703,35 @@
       ];
 
       /* ─────────────────────────────────────────
-         ✏️ GALLERY — replace src with your own photo URLs
-            Set an item to null to render a placeholder tile instead
+         ✏️ GALLERY — Car wash focused images.
+            Replace src URLs with your own photos.
+            Set an item to null to render a placeholder tile instead.
       ───────────────────────────────────────── */
       const GALLERY_IMAGES = [
         {
-          src: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600&q=80&auto=format&fit=crop",
-          label: "Before & After",
-        },
-        {
           src: "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?w=600&q=80&auto=format&fit=crop",
-          label: "Exterior Detail",
+          label: "Foam Soak",
         },
         {
-          src: "https://images.unsplash.com/photo-1611651338412-8403fa6e3599?w=600&q=80&auto=format&fit=crop",
-          label: "Wheel Clean",
+          src: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=600&q=80&auto=format&fit=crop",
+          label: "Hand Wash Detail",
         },
         {
-          src: "https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=600&q=80&auto=format&fit=crop",
-          label: "Showroom Finish",
+          src: "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?w=600&q=80&auto=format&fit=crop",
+          label: "Wheel & Rim Clean",
+        },
+        {
+          src: "https://images.unsplash.com/photo-1607860108855-64acf2078ed9?w=600&q=80&auto=format&fit=crop",
+          label: "Rinse Down",
         },
         {
           src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop",
-          label: "Interior Detail",
+          label: "Foam Treatment",
         },
-        null, // ← This renders as a dashed "Your photo goes here" placeholder
+        {
+          src: "https://images.unsplash.com/photo-1605515298946-d664b2afd2f4?w=600&q=80&auto=format&fit=crop",
+          label: "Showroom Finish",
+        },
       ];
 
       /* ══════════════════════════════════════════════
@@ -570,7 +742,7 @@
       const WA_SVG = `<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.118 1.532 5.845L.054 23.25a.75.75 0 0 0 .916.916l5.405-1.478A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.745 9.745 0 0 1-5.003-1.375l-.358-.213-3.716 1.015 1.015-3.716-.213-.358A9.745 9.745 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>`;
       const CAL_SVG = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`;
 
-      // Render package cards into #pkgsGrid
+      // ── Render package cards into #pkgsGrid ──
       const pkgsGrid = document.getElementById("pkgsGrid");
       PACKAGES.forEach((p) => {
         const msg = encodeURIComponent(
@@ -581,18 +753,18 @@
         pkgsGrid.insertAdjacentHTML(
           "beforeend",
           `<div class="pkg${p.featured ? " featured" : ""} fi">
-        ${badge}
-        <div class="pkg-name">${p.name}</div>
-        <div class="pkg-tag">${p.tag}</div>
-        <div class="pkg-price">${p.price}</div>
-        <div class="pkg-note">${p.note}</div>
-        <div class="pkg-bar"></div>
-        <ul class="pkg-feats">${items}</ul>
-      </div>`,
+            ${badge}
+            <div class="pkg-name">${p.name}</div>
+            <div class="pkg-tag">${p.tag}</div>
+            <div class="pkg-price">${p.price}</div>
+            <div class="pkg-note">${p.note}</div>
+            <div class="pkg-bar"></div>
+            <ul class="pkg-feats">${items}</ul>
+          </div>`,
         );
       });
 
-      // Render gallery tiles into #galGrid
+      // ── Render gallery tiles into #galGrid ──
       const galGrid = document.getElementById("galGrid");
       GALLERY_IMAGES.forEach((item) => {
         if (!item) {
@@ -600,23 +772,96 @@
           galGrid.insertAdjacentHTML(
             "beforeend",
             `<div class="g-empty">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(0,212,184,.45)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          <span>Your photo<br/>goes here</span>
-        </div>`,
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(0,212,184,.45)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span>Your photo<br/>goes here</span>
+            </div>`,
           );
         } else {
           // Real image tile with hover overlay and label
           galGrid.insertAdjacentHTML(
             "beforeend",
             `<div class="g-cell">
-          <img src="${item.src}" alt="${item.label}" loading="lazy"/>
-          <div class="g-overlay"><span class="g-lbl">${item.label}</span></div>
-        </div>`,
+              <img src="${item.src}" alt="${item.label}" loading="lazy"/>
+              <div class="g-overlay"><span class="g-lbl">${item.label}</span></div>
+            </div>`,
           );
         }
       });
 
-      // Scroll fade-in: watches .fi elements and adds .vis when in viewport
+      /* ──────────────────────────────────────────────
+         TOGGLE LOGIC
+         Reads [data-view] on toggle buttons and shows/hides
+         #pkgsView / #bundlesView without page reload.
+         When bundlesView is first revealed, .fi elements within
+         it receive .vis to trigger their fade-in animations.
+      ────────────────────────────────────────────── */
+      const toggleBtns = document.querySelectorAll(".toggle-btn");
+      const pkgsView = document.getElementById("pkgsView");
+      const bundlesView = document.getElementById("bundlesView");
+
+      // Track whether bundles have been animated yet
+      let bundlesAnimated = false;
+
+      function showView(targetView) {
+        // Update button states
+        toggleBtns.forEach((btn) => {
+          const isActive = btn.dataset.view === targetView;
+          btn.classList.toggle("active", isActive);
+          btn.setAttribute("aria-selected", isActive);
+        });
+
+        if (targetView === "packages") {
+          // Fade out bundles view, fade in packages view
+          bundlesView.style.display = "none";
+          pkgsView.style.display = "";
+          // Reset transition for re-entry
+          pkgsView.style.opacity = "0";
+          pkgsView.style.transform = "translateY(10px)";
+          requestAnimationFrame(() => {
+            pkgsView.style.transition =
+              "opacity 0.32s ease, transform 0.32s ease";
+            requestAnimationFrame(() => {
+              pkgsView.style.opacity = "1";
+              pkgsView.style.transform = "none";
+            });
+          });
+        } else {
+          // Fade out packages view, fade in bundles view
+          pkgsView.style.display = "none";
+          bundlesView.style.display = "";
+          bundlesView.style.opacity = "0";
+          bundlesView.style.transform = "translateY(10px)";
+          requestAnimationFrame(() => {
+            bundlesView.style.transition =
+              "opacity 0.32s ease, transform 0.32s ease";
+            requestAnimationFrame(() => {
+              bundlesView.style.opacity = "1";
+              bundlesView.style.transform = "none";
+            });
+          });
+
+          // Animate .fi elements inside bundlesView on first reveal
+          if (!bundlesAnimated) {
+            bundlesAnimated = true;
+            bundlesView.querySelectorAll(".fi").forEach((el, i) => {
+              el.style.transitionDelay = `${i * 0.09}s`;
+              setTimeout(() => el.classList.add("vis"), 20);
+            });
+          }
+        }
+      }
+
+      // Attach click handlers to toggle buttons
+      toggleBtns.forEach((btn) => {
+        btn.addEventListener("click", () => showView(btn.dataset.view));
+      });
+
+      /* ──────────────────────────────────────────────
+         SCROLL FADE-IN (IntersectionObserver)
+         Watches .fi elements and adds .vis when in viewport.
+         Note: elements inside #bundlesView (display:none) are
+         handled separately by showView() above.
+      ────────────────────────────────────────────── */
       const io = new IntersectionObserver(
         (es) => {
           es.forEach((e) => {
@@ -628,9 +873,14 @@
         },
         { threshold: 0.08 },
       );
+
+      // Observe all .fi elements EXCEPT those inside #bundlesView
+      // (bundlesView starts hidden — IO cannot detect them)
       document.querySelectorAll(".fi").forEach((el, i) => {
-        el.style.transitionDelay = `${(i % 5) * 0.08}s`; // Staggered delay
-        io.observe(el);
+        if (!el.closest("#bundlesView")) {
+          el.style.transitionDelay = `${(i % 5) * 0.08}s`;
+          io.observe(el);
+        }
       });
     </script>
   </body>

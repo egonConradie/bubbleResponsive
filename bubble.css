@@ -719,7 +719,11 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(135deg, rgba(0,212,184,0.15) 0%, rgba(0,212,184,0.06) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 212, 184, 0.15) 0%,
+    rgba(0, 212, 184, 0.06) 100%
+  );
   border: 1px solid rgba(0, 212, 184, 0.35);
   border-radius: 50px;
   padding: 8px 18px 8px 14px;
@@ -772,13 +776,20 @@ section {
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
+  transition:
+    transform 0.22s,
+    box-shadow 0.22s,
+    border-color 0.22s;
 }
 .bundle-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 80% 55% at 100% 0%, rgba(0,212,184,0.06), transparent 65%);
+  background: radial-gradient(
+    ellipse 80% 55% at 100% 0%,
+    rgba(0, 212, 184, 0.06),
+    transparent 65%
+  );
   pointer-events: none;
 }
 .bundle-card:hover {
@@ -793,7 +804,11 @@ section {
   border-color: rgba(0, 212, 184, 0.42);
 }
 .bundle-card--featured::before {
-  background: radial-gradient(ellipse 80% 55% at 100% 0%, rgba(0,212,184,0.11), transparent 65%);
+  background: radial-gradient(
+    ellipse 80% 55% at 100% 0%,
+    rgba(0, 212, 184, 0.11),
+    transparent 65%
+  );
 }
 
 /* "Save R50" badge — top right corner */
@@ -856,7 +871,7 @@ section {
 .bundle-credits-lbl {
   font-size: 0.75rem;
   font-weight: 600;
-  color: rgba(255,255,255,0.28);
+  color: rgba(255, 255, 255, 0.28);
   letter-spacing: 0.3px;
   text-transform: uppercase;
   padding-bottom: 6px;
@@ -871,12 +886,12 @@ section {
 }
 .bundle-was {
   font-size: 0.72rem;
-  color: rgba(255,255,255,0.26);
+  color: rgba(255, 255, 255, 0.26);
   letter-spacing: 0.14px;
 }
 .bundle-was s {
   text-decoration: line-through;
-  text-decoration-color: rgba(255,255,255,0.3);
+  text-decoration-color: rgba(255, 255, 255, 0.3);
 }
 .bundle-now {
   font-family: "Syne", sans-serif;
@@ -888,7 +903,7 @@ section {
 }
 .bundle-per {
   font-size: 0.7rem;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255, 255, 255, 0.3);
   letter-spacing: 0.1px;
 }
 
@@ -928,19 +943,23 @@ section {
 
 /* Bundle CTA button — WhatsApp style */
 .btn-bundle {
-  background: rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.06);
   color: var(--white);
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   justify-content: center;
   font-size: 0.88rem;
   padding: 13px 22px;
   border-radius: 50px;
-  transition: background 0.18s, border-color 0.18s, transform 0.16s, box-shadow 0.2s;
+  transition:
+    background 0.18s,
+    border-color 0.18s,
+    transform 0.16s,
+    box-shadow 0.2s;
 }
 .btn-bundle:hover {
-  background: rgba(255,255,255,0.1);
-  border-color: rgba(255,255,255,0.22);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 /* Featured card variant: aqua-tinted button */
@@ -999,7 +1018,9 @@ section {
   background: var(--ink-card);
 }
 .g-cell img {
+  width: 100%;
   height: 100%;
+  object-fit: cover;
   transition: transform 0.4s ease;
 }
 .g-cell:hover img {
@@ -1201,4 +1222,327 @@ section {
 .fi.vis {
   opacity: 1;
   transform: none;
+}
+
+/* ══════════════════════════════════════════
+   PACKAGES / BUNDLES TOGGLE SWITCH
+   Pill-shaped toggle at the top of the services section.
+   Two buttons: "Packages" (default active) and "Bundles".
+   JS reads [data-view] and toggles #pkgsView / #bundlesView.
+══════════════════════════════════════════ */
+
+/* Outer centering wrapper */
+.pkg-toggle-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+/* Toggle pill container */
+.pkg-toggle {
+  display: inline-flex;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  padding: 4px;
+  gap: 4px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+/* Individual toggle button */
+.toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.87rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.42);
+  background: transparent;
+  border: none;
+  border-radius: 50px;
+  padding: 11px 26px;
+  cursor: pointer;
+  transition:
+    background 0.22s ease,
+    color 0.22s ease,
+    box-shadow 0.22s ease,
+    transform 0.16s ease;
+  white-space: nowrap;
+  letter-spacing: 0.05px;
+  line-height: 1;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Active state: aqua fill */
+.toggle-btn.active {
+  background: var(--aqua);
+  color: var(--ink);
+  box-shadow: 0 4px 18px rgba(0, 212, 184, 0.28);
+  font-weight: 700;
+}
+
+/* Hover on inactive button */
+.toggle-btn:hover:not(.active) {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+/* Focus-visible outline for keyboard navigation */
+.toggle-btn:focus-visible {
+  outline: 2px solid var(--aqua);
+  outline-offset: 2px;
+}
+
+/* Active press feedback */
+.toggle-btn:active {
+  transform: scale(0.97);
+}
+
+/* Toggle SVG icons inherit button colour */
+.toggle-btn svg {
+  flex-shrink: 0;
+  transition: stroke 0.22s ease;
+}
+.toggle-btn.active svg {
+  stroke: var(--ink);
+}
+
+/* ── Bundle-wrap override when inside #bundlesView ──
+   The original .bundle-wrap has top-margin/padding/border for
+   use below packages. Inside the toggle'd panel those aren't needed.
+──────────────────────────────────────────────────── */
+#bundlesView .bundle-wrap {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+/* View panels: smooth fade transition handled via inline JS */
+#pkgsView,
+#bundlesView {
+  transition:
+    opacity 0.32s ease,
+    transform 0.32s ease;
+}
+
+/* ── Mobile responsiveness for toggle ── */
+@media (max-width: 480px) {
+  .toggle-btn {
+    font-size: 0.82rem;
+    padding: 10px 18px;
+    gap: 5px;
+  }
+  /* Hide SVG icons on very small screens to save space */
+  .toggle-btn svg {
+    display: none;
+  }
+}
+
+/* ══════════════════════════════════════════
+   EXTRA ADD-ONS SECTION
+   Checkbox selection cards below the toggle content.
+   Always visible regardless of which toggle tab is active.
+══════════════════════════════════════════ */
+
+/* Section wrapper: separator line + spacing matching bundle-wrap */
+.addons-section {
+  margin-top: 48px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(0, 212, 184, 0.12);
+}
+
+/* Header above the add-on cards */
+.addons-header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+
+/* Subtitle text — reuses .sec-sub tone */
+.addons-sub {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.38);
+  line-height: 1.7;
+  font-weight: 300;
+  letter-spacing: 0.06px;
+  max-width: 440px;
+}
+
+/* Two-column responsive grid (stacks to 1 col on small screens) */
+.addons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 14px;
+}
+
+/* ── Label wrapper (makes whole card clickable) ── */
+.addon-item {
+  display: block;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  /* Ensure consistent layout */
+  position: relative;
+}
+
+/* Native checkbox — hidden but still keyboard/screen-reader accessible */
+.addon-check-input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+/* ── Visible card ── */
+.addon-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--ink-card);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--r);
+  padding: 20px 22px;
+  transition:
+    border-color 0.22s,
+    background 0.22s,
+    transform 0.18s,
+    box-shadow 0.22s;
+  /* Prevent text selection when clicking */
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Hover feedback — lift effect */
+.addon-item:hover .addon-card {
+  border-color: rgba(0, 212, 184, 0.26);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+}
+
+/* Checked state: aqua-tinted card */
+.addon-check-input:checked + .addon-card {
+  border-color: rgba(0, 212, 184, 0.5);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 212, 184, 0.07) 0%,
+    rgba(0, 212, 184, 0.03) 100%
+  );
+  box-shadow: 0 0 24px rgba(0, 212, 184, 0.1);
+}
+
+/* Icon box — matches .feat-ico style */
+.addon-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(0, 212, 184, 0.09);
+  border: 1px solid rgba(0, 212, 184, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+  transition:
+    background 0.22s,
+    border-color 0.22s;
+}
+
+.addon-check-input:checked + .addon-card .addon-icon-wrap {
+  background: rgba(0, 212, 184, 0.15);
+  border-color: rgba(0, 212, 184, 0.35);
+}
+
+/* Text block */
+.addon-info {
+  flex: 1;
+  min-width: 0; /* Prevent overflow */
+}
+
+.addon-name {
+  font-family: "Syne", sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  margin-bottom: 4px;
+  color: var(--white);
+  transition: color 0.18s;
+}
+
+.addon-check-input:checked + .addon-card .addon-name {
+  color: var(--aqua);
+}
+
+.addon-desc {
+  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.36);
+  line-height: 1.55;
+  font-weight: 300;
+  letter-spacing: 0.04px;
+}
+
+/* ── Circular tick indicator ── */
+.addon-tick {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.14);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.22s,
+    border-color 0.22s,
+    box-shadow 0.22s;
+  /* SVG tick hidden by default */
+  color: transparent;
+}
+
+/* Filled aqua tick when checked */
+.addon-check-input:checked + .addon-card .addon-tick {
+  background: var(--aqua);
+  border-color: var(--aqua);
+  box-shadow: 0 0 14px rgba(0, 212, 184, 0.4);
+  color: var(--ink);
+}
+
+/* ── Pulse animation on selection ── */
+@keyframes addon-pulse-anim {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 212, 184, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(0, 212, 184, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 212, 184, 0);
+  }
+}
+
+.addon-card.addon-pulse {
+  animation: addon-pulse-anim 0.4s ease-out;
+}
+
+/* ── Mobile: single column, tighter padding ── */
+@media (max-width: 540px) {
+  .addons-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .addon-card {
+    padding: 16px 18px;
+    gap: 14px;
+  }
+
+  .addon-icon-wrap {
+    width: 42px;
+    height: 42px;
+    font-size: 1.15rem;
+  }
+
+  .addon-name {
+    font-size: 0.93rem;
+  }
 }
