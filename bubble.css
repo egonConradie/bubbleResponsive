@@ -1377,7 +1377,7 @@ section {
   gap: 14px;
 }
 
-/* ── Label wrapper (makes whole card clickable) ── */
+/* ── Labssel wrapper (makes whole card clickable) ── */
 .addon-item {
   display: block;
   cursor: pointer;
