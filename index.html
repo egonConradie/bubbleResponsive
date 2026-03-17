@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bubble Buggy – The Estate's Premium Mobile Wash</title>
 
-    <!-- ═══════════ GOOGLE FONTS ═══════════
-         Syne  → headings / logo / prices
-         Plus Jakarta Sans → body text / buttons
-    ════════════════════════════════════════ -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,42 +12,30 @@
       rel="stylesheet"
     />
 
-    <!-- ═══════════ STYLESHEET ═══════════
-         All styles live in bubble.css
-         (keep both files in the same folder)
-    ════════════════════════════════════════ -->
     <link rel="stylesheet" href="bubble.css" />
   </head>
 
   <body>
-    <!-- ═══════════════════════════════════
-         NAV
-         Fixed top bar: logo | links | phone | CTA buttons
-    ════════════════════════════════════════ -->
     <nav class="nav">
-      <!-- Logo -->
       <a href="#home" class="logo">
         <span>Bubble</span><span class="b2">Buggy</span
         ><span class="dot"></span>
       </a>
 
-      <!-- Centre navigation links (hidden on mobile) -->
       <div class="nav-links">
         <a class="nav-link" href="#why">Why Us</a>
         <a class="nav-link" href="#services">Packages</a>
         <a class="nav-link" href="#gallery">Gallery</a>
       </div>
 
-      <!-- Right side: phone number + action buttons -->
       <div class="nav-right">
         <span class="nav-phone"
           ><a href="tel:+27000000000">+27 000 000 0000</a></span
         >
 
-        <!-- Book Now button (opens Fresha) -->
         <a
           class="btn btn-book"
-          href="https://www.fresha.com/for-business"
+          href="https://www.getmebooked.co.za/book/bubblebuggy/"
           target="_blank"
           rel="noopener"
         >
@@ -71,7 +55,6 @@
           Book Now
         </a>
 
-        <!-- WhatsApp button -->
         <a
           class="btn btn-wa"
           href="https://wa.me/27000000000?text=Hi%20Bubble%20Buggy!%20I%27d%20like%20to%20book%20a%20wash."
@@ -91,41 +74,29 @@
       </div>
     </nav>
 
-    <!-- ═══════════════════════════════════
-         HERO SECTION
-         Full-screen opening with background image, headline, stats
-         ✏️ Edit estates, headline, sub text, and stats here
-    ════════════════════════════════════════ -->
     <section class="hero" id="home">
-      <!-- Background image (set via CSS in .hero-bg) -->
       <div class="hero-bg"></div>
 
       <div class="hero-inner">
-        <!-- ✏️ Edit estate names here -->
         <div class="estate-tag">
           📍 Estates we serve &nbsp;<span class="sep">|</span>&nbsp;
           <span class="estates"> Sitari Country Estate &nbsp; </span>
         </div>
 
-        <!-- Eyebrow label above headline -->
         <p class="hero-eyebrow">Mobile Car Wash</p>
 
-        <!-- Main headline — <em> gets gradient colour treatment -->
         <h1>Everyone's preferred<br /><em>car wash.</em></h1>
 
-        <!-- Subtitle paragraph -->
         <p class="hero-sub">
           Your neighbours will notice. Your car already has. We come to you no
           queues, no driving, just a clean car waiting for you outside.
         </p>
 
-        <!-- CTA Buttons row -->
         <div class="hero-ctas">
-          <!-- Book Now column (button + Fresha note) -->
           <div class="cta-col">
             <a
               class="btn btn-book lg"
-              href="https://www.fresha.com/for-business"
+              href="https://www.getmebooked.co.za/book/bubblebuggy/"
               target="_blank"
               rel="noopener"
             >
@@ -144,10 +115,9 @@
               </svg>
               Book Now
             </a>
-            <span class="fresha-note">Instant booking via <b>Fresha</b></span>
+            <span class="fresha-note">Bookings via <b>GetMeBooked</b></span>
           </div>
 
-          <!-- WhatsApp button -->
           <a
             class="btn btn-wa lg"
             href="https://wa.me/27000000000?text=Hi%20Bubble%20Buggy!%20I%27d%20like%20to%20book%20a%20wash."
@@ -165,11 +135,9 @@
             Book via WhatsApp
           </a>
 
-          <!-- View Packages scroll link -->
           <a class="btn btn-outline lg" href="#services">View Packages</a>
         </div>
 
-        <!-- ✏️ Edit stats here: cars washed / estates / guarantee -->
         <div class="hero-stats">
           <div>
             <div class="stat-val">100<span>+</span></div>
@@ -187,16 +155,9 @@
       </div>
     </section>
 
-    <!-- Decorative divider line -->
     <div class="rule"></div>
 
-    <!-- ═══════════════════════════════════
-         WHY CHOOSE US SECTION
-         Three feature cards with emoji icons
-         ✏️ Edit card titles/descriptions directly below
-    ════════════════════════════════════════ -->
     <section class="why" id="why">
-      <!-- Section header -->
       <div class="sec-head fi">
         <div class="lbl">Why Bubble Buggy</div>
         <h2 class="sec-title">
@@ -204,9 +165,7 @@
         </h2>
       </div>
 
-      <!-- Feature cards grid -->
       <div class="feats">
-        <!-- Card 1: Convenience -->
         <div class="feat fi">
           <div class="feat-ico">📍</div>
           <div class="feat-title">Pure Convenience</div>
@@ -216,7 +175,6 @@
           </p>
         </div>
 
-        <!-- Card 2: Quality -->
         <div class="feat fi">
           <div class="feat-ico">✨</div>
           <div class="feat-title">Fast &amp; Flawless</div>
@@ -226,7 +184,6 @@
           </p>
         </div>
 
-        <!-- Card 3: Guarantee -->
         <div class="feat fi">
           <div class="feat-ico">🔄</div>
           <div class="feat-title">Eco Friendy</div>
@@ -238,22 +195,9 @@
       </div>
     </section>
 
-    <!-- Decorative divider line -->
     <div class="rule"></div>
 
-    <!-- ═══════════════════════════════════
-         PACKAGES / PRICING SECTION
-         ─────────────────────────────────
-         TOGGLE: Users switch between Packages and Bundles views
-         via the pill toggle. Content updates without page reload.
-         
-         ADD-ONS: Two optional extras (checkboxes) shown below
-         the toggle content, always visible regardless of view.
-         
-         ✏️ Edit packages inside the <script> block at the bottom.
-    ════════════════════════════════════════ -->
     <section class="services" id="services">
-      <!-- Section header -->
       <div class="sec-head fi">
         <div class="lbl">Our Packages</div>
         <h2 class="sec-title">Packages built for every ride.</h2>
@@ -263,18 +207,12 @@
         </p>
       </div>
 
-      <!-- ── TOGGLE SWITCH ──
-           Switches between the Packages view and the Bundles view.
-           JS below reads [data-view] on each button and shows/hides
-           #pkgsView / #bundlesView accordingly.
-      ─────────────────────────────────────────────────────── -->
       <div class="pkg-toggle-wrap fi">
         <div
           class="pkg-toggle"
           role="tablist"
           aria-label="Switch between packages and bundles"
         >
-          <!-- "Packages" tab: active by default -->
           <button
             class="toggle-btn active"
             data-view="packages"
@@ -297,7 +235,6 @@
             </svg>
             Packages
           </button>
-          <!-- "Bundles" tab -->
           <button
             class="toggle-btn"
             data-view="bundles"
@@ -323,21 +260,10 @@
           </button>
         </div>
       </div>
-      <!-- /toggle-wrap -->
-
-      <!-- ── PACKAGES VIEW ──
-           Shown when "Packages" toggle is active.
-           Cards injected dynamically by JavaScript from PACKAGES array.
-      ─────────────────────────────────────────────────────── -->
       <div id="pkgsView" role="tabpanel" aria-labelledby="tab-packages">
-        <!-- Package cards injected here by JavaScript -->
         <div class="pkgs" id="pkgsGrid"></div>
       </div>
 
-      <!-- ── BUNDLES VIEW ──
-           Hidden by default. Shown when "Bundles" toggle is active.
-           JS adds .vis to .fi elements inside when first revealed.
-      ─────────────────────────────────────────────────────── -->
       <div
         id="bundlesView"
         style="display: none"
@@ -345,7 +271,6 @@
         aria-labelledby="tab-bundles"
       >
         <div class="bundle-wrap">
-          <!-- "Buy a bundle and save" banner tag -->
           <div class="bundle-header fi">
             <div class="bundle-tag-pill">
               <span class="bundle-tag-icon">🎁</span>
@@ -358,9 +283,7 @@
             </p>
           </div>
 
-          <!-- Deal cards grid -->
           <div class="bundles">
-            <!-- Bundle 1: The Bubble Club × 3 -->
             <div class="bundle-card fi">
               <div class="bundle-save-badge">Save R50</div>
               <div class="bundle-wash-name">The Bubble Club</div>
@@ -407,7 +330,6 @@
               </a>
             </div>
 
-            <!-- Bundle 2: The Buggy Club × 3 -->
             <div class="bundle-card bundle-card--featured fi">
               <div class="bundle-save-badge">Save R50</div>
               <div class="bundle-wash-name">The Buggy Club</div>
@@ -452,17 +374,8 @@
               </a>
             </div>
           </div>
-          <!-- /bundles -->
         </div>
-        <!-- /bundle-wrap -->
       </div>
-      <!-- /bundlesView -->
-
-      <!-- ── EXTRA ADD-ONS ──
-           Always visible below the toggle views (both Packages & Bundles).
-           Users select optional add-ons via checkbox cards.
-           Checked state is purely visual / UX — add to booking message if needed.
-      ─────────────────────────────────────────────────────── -->
       <div class="addons-section fi">
         <div class="addons-header">
           <div class="lbl">Extra Add-Ons</div>
@@ -473,7 +386,6 @@
         </div>
 
         <div class="addons-grid">
-          <!-- Add-On 1: Tire polish & waxing -->
           <div class="addon-item">
             <div class="addon-card">
               <div class="addon-icon-wrap">🛞</div>
@@ -486,7 +398,6 @@
             </div>
           </div>
 
-          <!-- Add-On 2: Windscreen rain repellent -->
           <div class="addon-item">
             <div class="addon-card">
               <div class="addon-icon-wrap">💧</div>
@@ -499,28 +410,18 @@
             </div>
           </div>
         </div>
-        <!-- /addons-grid -->
       </div>
-      <!-- /addons-section -->
     </section>
 
-    <!-- Decorative divider line -->
     <div class="rule"></div>
 
-    <!-- ═══════════════════════════════════
-         GALLERY SECTION
-         Photo grid rendered dynamically from GALLERY_IMAGES array in script.
-         ✏️ Replace src URLs in GALLERY_IMAGES inside the <script> block below.
-    ════════════════════════════════════════ -->
     <section class="gallery" id="gallery">
-      <!-- Section header -->
       <div class="sec-head fi">
         <div class="lbl">Before &amp; After</div>
         <h2 class="sec-title">Real results, real cars.</h2>
         <p class="sec-sub">See the Bubble Buggy difference</p>
       </div>
 
-      <!-- Tip notice about adding photos -->
       <div class="gallery-tip">
         <svg
           width="12"
@@ -536,18 +437,11 @@
         </svg>
       </div>
 
-      <!-- Gallery photo cells injected here by JavaScript -->
       <div class="g-grid" id="galGrid"></div>
     </section>
 
-    <!-- ═══════════════════════════════════
-         FOOTER
-         Three-column: brand info | contact | quick links
-         ✏️ Edit phone number and links here
-    ════════════════════════════════════════ -->
     <footer class="footer">
       <div class="footer-grid">
-        <!-- Column 1: Logo + tagline -->
         <div>
           <div class="footer-logo">
             Bubble<span class="b2">Buggy</span
@@ -569,13 +463,11 @@
           </p>
         </div>
 
-        <!-- Column 2: Contact phone -->
         <div class="footer-col">
           <h4>Contact</h4>
           <a class="footer-phone" href="tel:+27000000000">+27 000 000 0000</a>
         </div>
 
-        <!-- Column 3: Quick navigation links -->
         <div class="footer-col">
           <h4>Quick Links</h4>
           <div class="footer-links">
@@ -583,16 +475,15 @@
             <a href="#services">Packages</a>
             <a href="#gallery">Gallery</a>
             <a
-              href="https://www.fresha.com/for-business"
+              href="https://www.getmebooked.co.za/book/bubblebuggy/"
               target="_blank"
               rel="noopener"
-              >Book on Fresha ↗</a
+              >Book on GetMeBooked ↗</a
             >
           </div>
         </div>
       </div>
 
-      <!-- Footer bottom bar: copyright notices -->
       <div class="footer-bottom">
         <span class="footer-copy"
           >© 2025 Bubble Buggy. All rights reserved.</span
@@ -601,16 +492,10 @@
       </div>
     </footer>
 
-    <!-- ═══════════════════════════════════
-         MOBILE FLOATING ACTION BAR
-         Fixed bottom bar shown only on screens ≤ 820px wide
-         Contains Book Now + WhatsApp buttons
-    ════════════════════════════════════════ -->
     <div class="mob-bar">
-      <!-- Book Now button -->
       <a
         class="btn btn-book"
-        href="https://www.fresha.com/a/bubble-buggy-cape-town-sitari-country-estate-old-main-rd-croydon-cape-town-7130-s2rawwab?preview=39be70c4-fe0f-4483-9e56-63929dc5d079&pId=2815808&_gl=1*5z0vg8*_gcl_aw*R0NMLjE3NzMyMzUwMjMuQ2p3S0NBandwY1ROQmhBNUVpd0FkTzFTOXA5NURjcDRCZXpZWDgzMk9GR2VTZDlTNGZQY2ViQWtla1p0Q1B6emFYTXVhTEpoQy1QeEVCb0NMRWNRQXZEX0J3RQ..*_gcl_au*MTY2NDQ4NDAyLjE3NzMwNjcxNzguMTk4MDg1NTU4MS4xNzczMjI5MDU0LjE3NzMyMjkwNTQ.*_ga*MTkwNzA5Nzk2Ni4xNzczMDY3MTc5*_ga_SMQNG7NE8C*czE3NzMyMjg0NDckbzckZzEkdDE3NzMyMzYwOTMkajUxJGwwJGgw"
+        href="https://www.getmebooked.co.za/book/bubblebuggy/"
         target="_blank"
         rel="noopener"
       >
@@ -630,7 +515,6 @@
         Book Now
       </a>
 
-      <!-- WhatsApp button -->
       <a
         class="btn btn-wa"
         href="https://wa.me/27000000000?text=Hi%20Bubble%20Buggy!%20I%27d%20like%20to%20book%20a%20wash."
@@ -649,19 +533,12 @@
       </a>
     </div>
 
-    <!-- ═══════════════════════════════════════════════════
-         JAVASCRIPT — Edit your data here
-         ✏️ WA        → Your WhatsApp number (digits only)
-         ✏️ FRESHA    → Your Fresha booking URL
-         ✏️ PACKAGES  → Add/edit pricing packages
-         ✏️ GALLERY_IMAGES → Replace src URLs with your photos
-    ════════════════════════════════════════════════════════ -->
     <script>
       /* ─────────────────────────────────────────
          ✏️ GLOBAL SETTINGS — edit these two lines
       ───────────────────────────────────────── */
       const WA = "27000000000"; // Your WhatsApp number (no + or spaces)
-      const FRESHA = "https://www.fresha.com/for-business"; // Your Fresha booking URL
+      const FRESHA = "https://www.getmebooked.co.za/book/bubblebuggy/"; // Your booking URL
 
       /* ─────────────────────────────────────────
          ✏️ PACKAGES — Updated prices: The Bubble R175, The Full Buggy R200
@@ -880,3 +757,4 @@
     </script>
   </body>
 </html>
+
